@@ -36,5 +36,12 @@ To check your subscription, please send your instagram account without @
 
 e.x: {}""",
     "instagram_next_text": "Congratulations, click next.",
-    "instagram_repeat_buttuon": "If you are not subscribed, please subscribe, https://www.instagram.com/{}/"
+    "instagram_repeat_buttuon": "If you are not subscribed, please subscribe, https://www.instagram.com/{}/",
+    "facebook_text" : "{}, Now let's get started, on Facebook, please Like and Comment on <a href='{}'> Airdrop Post</a> and tag 5 friends in that comment.\n\n"
+                      "📝Then please enter your Facebook link"
+                      "Example: https://www.facebook.com/username or https://www.facebook.com/profile?id=your-id",
+
+    "twitter_text" : "{}, Now let's get started, on Twitter, please Like and Comment on <a href='{}'> Airdrop Post</a> and tag 5 friends in that comment.\n\n"
+                      "📝Then please enter your Twitter link"
+                      "Example: https://www.twitter.com/username or https://www.twitter.com/profile?id=your-id",
 }

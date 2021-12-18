@@ -8,5 +8,5 @@ L.load_session_from_file('haminmoshotmi', '/Users/yoshlikmedia/Projects/Checker-
 profile = Profile.from_username(L.context, 'yoshlik_media')
 print("{} follows these profiles:".format(profile.username))
 
-for followee in profile.get_followees():
+for followee in profile.get:
     print(followee.username)

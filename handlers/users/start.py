@@ -50,5 +50,5 @@ async def checker(call: types.CallbackQuery):
     if next_check:
         await call.message.answer(result, reply_markup=next, disable_web_page_preview=True)
     else:
-        await call.message.answer(result, disable_web_page_preview=True)
+        await call.message.answer(result, reply_markup=check_button, disable_web_page_preview=True)
 
