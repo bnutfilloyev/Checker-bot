@@ -36,5 +36,45 @@ To check your subscription, please send your instagram account without @
 
 e.x: {}""",
     "instagram_next_text": "Congratulations, click next.",
-    "instagram_repeat_buttuon": "If you are not subscribed, please subscribe, https://www.instagram.com/{}/"
+    "instagram_repeat_buttuon": "If you are not subscribed, please subscribe, https://www.instagram.com/{}/",
+
+    "facebook_text" : "{}, Now let's get started, on Facebook, please Like and Comment on <a href='{}'>"
+                      " Airdrop Post</a> and tag 5 friends in that comment.\n\n"
+                      "📝Then please enter your Facebook link"
+                      "Example: https://www.facebook.com/username or https://www.facebook.com/profile?id=your-id",
+
+    'facebook_repeat_text': "❌ Your Facebook link is invalid, please try again! "
+                            "\n\nExample: https://www.facebook.com/username or https://www.facebook.com/profile?id=your-id",
+
+    'facebook_accept': "Thanks! Please press Next",
+
+    "twitter_text" : "{}, Now let's get started, on Twitter, please Like and Comment on "
+                     "<a href='{}'> Airdrop Post</a> and tag 5 friends in that comment.\n\n"
+                      "📝Then please enter your Twitter link"
+                      "Example: https://www.twitter.com/username or https://www.twitter.com/profile?id=your-id",
+
+    'twitter_repeat': "❌ Your Facebook link is invalid, please try again! "
+                            "\n\nExample: https://www.facebook.com/username or https://www.facebook.com/profile?id=your-id",
+
+    'twitter_accept': "Thanks! Please press Next",
+
+    "discord_text": "{}, Now let's get started, on Discord, please Like and Comment on "
+                    "<a href='{}'> Airdrop Post</a> and tag 5 friends in that comment.\n\n"
+                     "📝Then please enter your Discord link"
+                     "Example: https://www.discord.com/username or https://www.discord.com/profile?id=your-id",
+
+    'discord_repeat': "❌ Your Facebook link is invalid, please try again! "
+                            "\n\nExample: https://www.facebook.com/username or https://www.facebook.com/profile?id=your-id",
+
+    'discord_accept': "Thanks! Please press Next",
+
+    "youtube_text": "{}, Now let's get started, on YouTube, please Like and Comment on "
+                    "<a href='{}'> Airdrop Post</a> and tag 5 friends in that comment.\n\n"
+                    "📝Then please enter your YouTube link"
+                    "Example: https://www.youtube.com/username or https://www.youtube.com/profile?id=your-id",
+
+    'youtube_repeat': "❌ Your Facebook link is invalid, please try again! "
+                            "\n\nExample: https://www.facebook.com/username or https://www.facebook.com/profile?id=your-id",
+
+    'youtube_accept': "Thanks! Please press Next",
 }

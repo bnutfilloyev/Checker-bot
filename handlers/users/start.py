@@ -1,4 +1,5 @@
 import logging
+from datetime import datetime
 
 from aiogram import types
 from aiogram.dispatcher.filters.builtin import CommandStart
@@ -9,11 +10,21 @@ from keyboards.inline.subscription import check_button
 from keyboards.default.next_button import next
 from states.States import Form
 from utils.misc import subscription
+from utils.db_api.mongo import users_db
 
 from loader import dp, bot
 
+
 @dp.message_handler(CommandStart())
 async def bot_start(message: types.Message):
+    start_db = users_db.update_one({'telegram_id': message.from_user.id}, {
+        '$set': {
+            'name': message.from_user.full_name,
+            'telegram_id': message.from_user.id,
+            'time': datetime.now(),
+        }
+    }, upsert=True)
+    print(start_db.matched_count)
     await message.answer(texts.text['start_text'].format(message.from_user.full_name), reply_markup=accept_button)
 
 
@@ -29,6 +40,7 @@ async def check_telegram(message: types.Message):
                          reply_markup=check_button,
                          disable_web_page_preview=True)
     await Form.CheckTelegram.set()
+
 
 @dp.callback_query_handler(text="check_subs", state=Form.CheckTelegram)
 async def checker(call: types.CallbackQuery):
@@ -48,7 +60,12 @@ async def checker(call: types.CallbackQuery):
             result += (f"<b>{channel.title}</b> You are not subscribed to the channel."
                        f"<a href='{invite_link}'>Subscribe</a>\n\n")
     if next_check:
-        await call.message.answer(result, reply_markup=next, disable_web_page_preview=True)
-    else:
-        await call.message.answer(result, disable_web_page_preview=True)
+        users_db.update_one({'telegram_id': call.from_user.id}, {
+            '$set': {
+                'invite_telegram': True,
+            }
+        }, upsert=True)
+        await call.message.answer(result, reply_markup=next)
 
+    else:
+        await call.message.answer(result, reply_markup=check_button, disable_web_page_preview=True)
