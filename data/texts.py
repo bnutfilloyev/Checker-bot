@@ -25,7 +25,16 @@ text = {
     ✔️ 3000 lucky users will be randomly selected to receive the airdrop
     
 <b>When you ready to start please click to "👍 I’m ready to submit my details" or reply "👍 I’m ready to submit my details"</b> """,
+
     "subscription_text": """Step 1:
 
-Subscribe to Telegram channel."""
+Subscribe to Telegram channel.""",
+
+    "instagram_subscription": """Please subscribe to instagram.
+Instagram Link:https://www.instagram.com/{}/
+To check your subscription, please send your instagram account without @
+
+e.x: {}""",
+    "instagram_next_text": "Congratulations, click next.",
+    "instagram_repeat_buttuon": "If you are not subscribed, please subscribe, https://www.instagram.com/{}/"
 }

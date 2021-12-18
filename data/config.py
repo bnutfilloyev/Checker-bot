@@ -7,3 +7,4 @@ BOT_TOKEN = env.str("BOT_TOKEN")
 ADMINS = env.list("ADMINS")
 IP = env.str("ip")
 CHANNELS = [-1001440890131, -1001183218634]
+INSTAGRAM_USERNAME = 'yoshlik_media'
