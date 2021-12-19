@@ -11,7 +11,7 @@ from re import search
 
 from utils.db_api.mongo import users_db
 
-check = r'^https?:\/\/(www\.)?youtube\.com\/(channel\/UC[\w-]{21}[AQgw]|(c\/|user\/)?[\w-]+)$'
+check = r'[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+'
 
 @dp.message_handler(text='⏩next', state=Form.GetYoutube)
 async def get_link(msg: types.Message):
@@ -24,10 +24,11 @@ async def check_link(msg: types.Message, state: FSMContext):
     if search(check, youtube):
         users_db.update_one({'telegram_id': msg.from_user.id}, {
             "$set":{
-                'invite_youtube': youtube
+                'invite_youtube': youtube,
+                'all_check': True
             }
         }, upsert=True)
-        await msg.reply(text=texts.text['youtube_accept'], reply_markup=next)
+        await msg.reply(text=texts.text['final_text'])
         await state.finish()
     else:
         await msg.reply(text=texts.text['youtube_repeat'])

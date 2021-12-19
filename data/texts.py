@@ -26,19 +26,18 @@ text = {
     
 <b>When you ready to start please click to "👍 I’m ready to submit my details" or reply "👍 I’m ready to submit my details"</b> """,
 
-    "subscription_text": """Step 1:
+    "subscription_text": "Step 1:\n\n Subscribe to Telegram channel.",
 
-Subscribe to Telegram channel.""",
+    "instagram_subscription": "Please subscribe to instagram.\n\n "
+                              "Instagram Link:https://www.instagram.com/{}/\n"
+                              "To check your subscription, please send your instagram account without @\n\n"
+                              "e.x: {}",
 
-    "instagram_subscription": """Please subscribe to instagram.
-Instagram Link:https://www.instagram.com/{}/
-To check your subscription, please send your instagram account without @
-
-e.x: {}""",
     "instagram_next_text": "Congratulations, click next.",
+
     "instagram_repeat_buttuon": "If you are not subscribed, please subscribe, https://www.instagram.com/{}/",
 
-    "facebook_text" : "{}, Now let's get started, on Facebook, please Like and Comment on <a href='{}'>"
+    "facebook_text" : "🤗{}, Now let's get started, on Facebook, please Like and Comment on <a href='{}'>"
                       " Airdrop Post</a> and tag 5 friends in that comment.\n\n"
                       "📝Then please enter your Facebook link"
                       "Example: https://www.facebook.com/username or https://www.facebook.com/profile?id=your-id",
@@ -48,33 +47,32 @@ e.x: {}""",
 
     'facebook_accept': "Thanks! Please press Next",
 
-    "twitter_text" : "{}, Now let's get started, on Twitter, please Like and Comment on "
-                     "<a href='{}'> Airdrop Post</a> and tag 5 friends in that comment.\n\n"
-                      "📝Then please enter your Twitter link"
-                      "Example: https://www.twitter.com/username or https://www.twitter.com/profile?id=your-id",
+    "twitter_text" : "🤗 <b>{}</b>, Please follow <a href='{}'> THE PARALLEL </a>\n\n"
+                      "After that, enter your Twitter username.",
 
     'twitter_repeat': "❌ Your Facebook link is invalid, please try again! "
                             "\n\nExample: https://www.facebook.com/username or https://www.facebook.com/profile?id=your-id",
 
     'twitter_accept': "Thanks! Please press Next",
 
-    "discord_text": "{}, Now let's get started, on Discord, please Like and Comment on "
-                    "<a href='{}'> Airdrop Post</a> and tag 5 friends in that comment.\n\n"
-                     "📝Then please enter your Discord link"
-                     "Example: https://www.discord.com/username or https://www.discord.com/profile?id=your-id",
+    "discord_text": "🤗 <b>{}</b>,Next, please join our community on <a href='{}'> Discord Server </a>\n\n"
+                     "After that, enter your Discord Username ...",
 
     'discord_repeat': "❌ Your Facebook link is invalid, please try again! "
                             "\n\nExample: https://www.facebook.com/username or https://www.facebook.com/profile?id=your-id",
 
     'discord_accept': "Thanks! Please press Next",
 
-    "youtube_text": "{}, Now let's get started, on YouTube, please Like and Comment on "
-                    "<a href='{}'> Airdrop Post</a> and tag 5 friends in that comment.\n\n"
-                    "📝Then please enter your YouTube link"
-                    "Example: https://www.youtube.com/username or https://www.youtube.com/profile?id=your-id",
+    "youtube_text": "🤗 <b>{}</b>, Next, please subscribe our <a href='{}'> Youtube Channel.</a>\n\n"
+                    "After that, enter your email address which already subscribed our Youtube Channel ...",
 
     'youtube_repeat': "❌ Your Facebook link is invalid, please try again! "
                             "\n\nExample: https://www.facebook.com/username or https://www.facebook.com/profile?id=your-id",
 
     'youtube_accept': "Thanks! Please press Next",
+
+    'final_text': "🤗 Finally, please submit your BEP-20 wallet address.\n\n"
+                  "Reminder :\n"
+                  "- Your wallet address must be BEP-20 wallet address",
 }
+
