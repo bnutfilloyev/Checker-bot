@@ -57,7 +57,7 @@ async def checker(call: types.CallbackQuery):
         else:
             next_check = False
             invite_link = await channel.export_invite_link()
-            result += (f"<b>{channel.title}</b> You are not subscribed to the channel. \n\n"
+            result += (f"❌<b>{channel.title}</b> You are not subscribed to the channel. \n\n"
                        f"<a href='{invite_link}'>Subscribe </a>")
     if next_check:
         users_db.update_one({'telegram_id': call.from_user.id}, {
