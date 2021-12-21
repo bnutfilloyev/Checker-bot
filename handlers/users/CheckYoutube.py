@@ -1,9 +1,7 @@
 from aiogram import types
 
 from data import texts
-from data.config import FACEBOOK_USERNAME, DISCORD_USERNAME, YOUTUBE_USERNAME
-from keyboards.default.next_button import next
-
+from data.config import YOUTUBE_USERNAME
 from aiogram.dispatcher import FSMContext
 from loader import dp
 from states.States import Form
@@ -12,6 +10,7 @@ from re import search
 from utils.db_api.mongo import users_db
 
 check = r'[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+'
+wallet = r'^0x[a-fA-F0-9]{40}$'
 
 @dp.message_handler(text='⏩next', state=Form.GetYoutube)
 async def get_link(msg: types.Message):
@@ -24,11 +23,33 @@ async def check_link(msg: types.Message, state: FSMContext):
     if search(check, youtube):
         users_db.update_one({'telegram_id': msg.from_user.id}, {
             "$set":{
-                'invite_youtube': youtube,
+                'invite_youtube': youtube
+            }
+        }, upsert=True)
+
+        walletcheck = users_db.find_one({'telegram_id': msg.from_user.id})
+        try:
+            print(walletcheck['wallet'])
+            await msg.reply(text=texts.text['bye_text'])
+            await state.finish()
+        except:
+            await msg.reply(text=texts.text['final_text'])
+            await Form.GetWallet.set()
+    else:
+        await msg.reply(text=texts.text['youtube_repeat'])
+
+
+@dp.message_handler(state=Form.GetWallet)
+async def get_wallet(msg: types.Message, state: FSMContext):
+    wallet_text = msg.text
+    if search(wallet, wallet_text):
+        users_db.update_one({'telegram_id': msg.from_user.id}, {
+            "$set": {
+                'wallet': wallet_text,
                 'all_check': True
             }
         }, upsert=True)
-        await msg.reply(text=texts.text['final_text'])
+        await msg.reply(text=texts.text['bye_text'])
         await state.finish()
     else:
-        await msg.reply(text=texts.text['youtube_repeat'])
+        await msg.reply(text=texts.text['final_text'])

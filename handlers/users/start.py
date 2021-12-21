@@ -5,6 +5,7 @@ from aiogram import types
 from aiogram.dispatcher.filters.builtin import CommandStart
 from data import texts
 from data.config import CHANNELS
+from filters import IsPrivate
 from keyboards.default.start_button import accept_button
 from keyboards.inline.subscription import check_button
 from keyboards.default.next_button import next
@@ -15,7 +16,7 @@ from utils.db_api.mongo import users_db
 from loader import dp, bot
 
 
-@dp.message_handler(CommandStart())
+@dp.message_handler(CommandStart(), IsPrivate(), state='*')
 async def bot_start(message: types.Message):
     start_db = users_db.update_one({'telegram_id': message.from_user.id}, {
         '$set': {
@@ -52,12 +53,12 @@ async def checker(call: types.CallbackQuery):
                                           channel=channel)
         channel = await bot.get_chat(channel)
         if status:
-            result += f"✅ <b>{channel.title}</b> You have subscribed to the channel!\n\n"
+            result += f"✅ <b>{channel.title}</b> You have subscribed to the channel!"
             await Form.GetInstagram.set()
         else:
             next_check = False
             invite_link = await channel.export_invite_link()
-            result += (f"❌<b>{channel.title}</b> You are not subscribed to the channel. \n\n"
+            result += (f"❌<b>{channel.title}</b> You are not subscribed to the channel."
                        f"<a href='{invite_link}'>Subscribe </a>")
     if next_check:
         users_db.update_one({'telegram_id': call.from_user.id}, {

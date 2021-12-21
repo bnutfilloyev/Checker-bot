@@ -1,21 +1,31 @@
 from aiogram import types
 from aiogram.dispatcher import FSMContext
-
 from loader import dp
+from utils.db_api.mongo import users_db
+import datetime
+import pandas as pd
 
 
-# Эхо хендлер, куда летят текстовые сообщения без указанного состояния
-@dp.message_handler(state=None)
+@dp.message_handler(commands='get_excel')
 async def bot_echo(message: types.Message):
-    await message.answer(f"Эхо без состояния."
-                         f"Сообщение:\n"
-                         f"{message.text}")
+    with open('handlers/users/load.csv', 'r+') as f:
+        name = list(users_db.find_one().keys())
+        # print(','.join(name))
+        f.write(','.join(name))
+        f.write('\n')
+        for i in users_db.find():
+            name = list(i.values())
+            text = []
 
+            for j in name:
+                text.append(str(j))
 
-# Эхо хендлер, куда летят ВСЕ сообщения с указанным состоянием
-@dp.message_handler(state="*", content_types=types.ContentTypes.ANY)
-async def bot_echo_all(message: types.Message, state: FSMContext):
-    state = await state.get_state()
-    await message.answer(f"Эхо в состоянии <code>{state}</code>.\n"
-                         f"\nСодержание сообщения:\n"
-                         f"<code>{message}</code>")
+            # print(','.join(text))
+            f.write(','.join(text))
+            f.write('\n')
+
+    read_file = pd.read_csv(r'handlers/users/load.csv')
+    read_file.to_excel(r'handlers/users/load.xlsx', index=None, header=True)
+
+    with open('handlers/users/load.xlsx', 'rb') as f:
+        await message.answer_document(f)

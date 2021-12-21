@@ -30,4 +30,4 @@ async def check_instagram(msg: types.Message):
         await msg.reply(text=texts.text['twitter_accept'], reply_markup=next)
         await Form.GetDiscord.set()
     else:
-        await msg.reply(text=texts.text['discord_repeat'])
+        await msg.reply(text=texts.text['twitter_repeat'])

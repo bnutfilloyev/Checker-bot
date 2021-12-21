@@ -21,7 +21,7 @@ async def get_facebook(msg: types.Message):
 @dp.message_handler(state=Form.CheckFacebook)
 async def check_instagram(msg: types.Message):
     facebook_account = msg.text
-    if search(check, facebook_account):
+    if search(check, facebook_account) and facebook_account not in texts.text['invalid_link']:
         users_db.update_one({'telegram_id': msg.from_user.id}, {
             "$set":{
                 'invite_facebook': facebook_account

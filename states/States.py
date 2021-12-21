@@ -12,3 +12,5 @@ class Form(StatesGroup):
     CheckDiscord = State()
     GetYoutube = State()
     CheckYoutube = State()
+    GetWallet = State()
+    CheckWallet = State()

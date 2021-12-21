@@ -50,29 +50,29 @@ text = {
     "twitter_text" : "🤗 <b>{}</b>, Please follow <a href='{}'> THE PARALLEL </a>\n\n"
                       "After that, enter your Twitter username.",
 
-    'twitter_repeat': "❌ Your Facebook link is invalid, please try again! "
-                            "\n\nExample: https://www.facebook.com/username or https://www.facebook.com/profile?id=your-id",
+    'twitter_repeat': "❌ Your username is invalid, please try again! ",
 
     'twitter_accept': "Thanks! Please press Next",
 
     "discord_text": "🤗 <b>{}</b>,Next, please join our community on <a href='{}'> Discord Server </a>\n\n"
                      "After that, enter your Discord Username ...",
 
-    'discord_repeat': "❌ Your Facebook link is invalid, please try again! "
-                            "\n\nExample: https://www.facebook.com/username or https://www.facebook.com/profile?id=your-id",
+    'discord_repeat': "❌ Your link is invalid, please try again! ",
 
     'discord_accept': "Thanks! Please press Next",
 
     "youtube_text": "🤗 <b>{}</b>, Next, please subscribe our <a href='{}'> Youtube Channel.</a>\n\n"
                     "After that, enter your email address which already subscribed our Youtube Channel ...",
 
-    'youtube_repeat': "❌ Your Facebook link is invalid, please try again! "
-                            "\n\nExample: https://www.facebook.com/username or https://www.facebook.com/profile?id=your-id",
+    'youtube_repeat': "❌ Your link is invalid, please try again! ",
 
     'youtube_accept': "Thanks! Please press Next",
 
     'final_text': "🤗 Finally, please submit your BEP-20 wallet address.\n\n"
                   "Reminder :\n"
                   "- Your wallet address must be BEP-20 wallet address",
+    'invalid_link': ['https://www.facebook.com/username', 'https://www.facebook.com/profile?id=your-id'],
+
+    'bye_text': "Congratulations you have been accepted to the giveaway!"
 }
 
