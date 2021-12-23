@@ -29,7 +29,7 @@ async def bot_start(message: types.Message):
     await message.answer(texts.text['start_text'].format(message.from_user.full_name), reply_markup=accept_button)
 
 
-@dp.message_handler(text="👍 I'm ready to submit my details")
+@dp.message_handler(text="READY")
 async def check_telegram(message: types.Message):
     channels_format = str()
     for channel in CHANNELS:
