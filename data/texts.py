@@ -47,7 +47,7 @@ text = {
 
     'facebook_accept': "Thanks! Please press Next",
 
-    "twitter_text" : "🤗 <b>{}</b>, Please follow <a href='{}'> THE PARALLEL </a>\n\n"
+    "twitter_text" : "🤗 <b>{}</b>, Please follow <a href='{}'> Starbase Metaverse </a>\n\n"
                       "After that, enter your Twitter username.",
 
     'twitter_repeat': "❌ Your username is invalid, please try again! ",
