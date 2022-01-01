@@ -5,18 +5,27 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile
-      #image: bot
+    #image: bot
+    depends_on:
+      - database
+    networks:
+      - bot-db
     restart: always
 
-  datase:
+  database:
     image: mongo
     restart: always
-    ports:
-      - '27017-27019:27017-27019'
+    volumes:
+      - ./data:/data/db
+    networks:
+      - bot-db
+    expose:
+      - 27017
     environment:
       MONGO_INITDB_ROOT_USERNAME: admin
       MONGO_INITDB_ROOT_PASSWORD: admin
-
+networks:
+  bot-db: 
   #mongo-express:
       #image: mongo-express
       #restart: always
